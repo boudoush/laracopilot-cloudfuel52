@@ -49,44 +49,61 @@
             
             <div class="relative slide-in-right">
                 <div class="relative">
-                    <!-- Main Image Card with People -->
+                    <!-- QR Scanning Illustration -->
                     <div class="bg-white rounded-3xl shadow-2xl p-6 transform hover:scale-105 transition duration-300">
-                        <div class="relative overflow-hidden rounded-2xl">
-                            <!-- Farmer with Livestock Illustration -->
-                            <div class="w-full h-96 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center p-6">
-                                <div class="text-center relative">
-                                    <!-- Farmer illustration -->
-                                    <div class="mb-6">
-                                        <div class="w-32 h-32 mx-auto bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                                            <i class="fas fa-user text-white text-6xl"></i>
-                                        </div>
-                                        <div class="bg-white px-4 py-2 rounded-full inline-block shadow-md">
-                                            <span class="font-bold text-green-700">👨‍🌾 Amadou - Éleveur</span>
+                        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-100 to-green-200">
+                            <!-- Person Scanning QR Code Illustration -->
+                            <div class="w-full h-96 flex items-center justify-center p-8">
+                                <div class="relative w-full h-full">
+                                    <!-- Smartphone Frame -->
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-48 h-80 bg-gray-900 rounded-3xl shadow-2xl p-2 relative transform rotate-3 hover:rotate-0 transition duration-300">
+                                            <!-- Screen -->
+                                            <div class="w-full h-full bg-white rounded-2xl overflow-hidden relative">
+                                                <!-- Camera viewfinder effect -->
+                                                <div class="absolute inset-0 bg-gradient-to-b from-blue-100 to-green-100 flex items-center justify-center">
+                                                    <!-- QR Code in viewfinder -->
+                                                    <div class="w-32 h-32 bg-white p-2 rounded-xl shadow-lg animate-pulse">
+                                                        <svg viewBox="0 0 100 100" class="w-full h-full">
+                                                            <rect width="100" height="100" fill="white"/>
+                                                            <rect x="10" y="10" width="35" height="35" fill="black"/>
+                                                            <rect x="15" y="15" width="25" height="25" fill="white"/>
+                                                            <rect x="20" y="20" width="15" height="15" fill="black"/>
+                                                            <rect x="55" y="10" width="35" height="35" fill="black"/>
+                                                            <rect x="60" y="15" width="25" height="25" fill="white"/>
+                                                            <rect x="65" y="20" width="15" height="15" fill="black"/>
+                                                            <rect x="10" y="55" width="35" height="35" fill="black"/>
+                                                            <rect x="15" y="60" width="25" height="25" fill="white"/>
+                                                            <rect x="20" y="65" width="15" height="15" fill="black"/>
+                                                            <rect x="55" y="55" width="10" height="10" fill="black"/>
+                                                            <rect x="70" y="55" width="10" height="10" fill="black"/>
+                                                            <rect x="55" y="70" width="10" height="10" fill="black"/>
+                                                            <rect x="75" y="70" width="10" height="10" fill="black"/>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- Scanning Line Animation -->
+                                                    <div class="absolute inset-x-0 h-1 bg-green-500 animate-scan"></div>
+                                                </div>
+                                                <!-- Success Check -->
+                                                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg animate-bounce">
+                                                    <i class="fas fa-check-circle mr-1"></i>Vérifié!
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Livestock icons -->
-                                    <div class="flex justify-center items-center space-x-4 mb-4">
-                                        <i class="fas fa-cow text-green-700 text-5xl animate-bounce" style="animation-duration: 2s;"></i>
-                                        <i class="fas fa-horse text-green-600 text-4xl animate-bounce" style="animation-duration: 2.5s; animation-delay: 0.3s;"></i>
-                                        <i class="fas fa-sheep text-green-600 text-4xl animate-bounce" style="animation-duration: 2.2s; animation-delay: 0.6s;"></i>
-                                    </div>
-                                    <p class="text-green-800 font-bold text-lg">Tous Types de Bétail</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Happy Customer Badge -->
-                            <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-3 animate-pulse">
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-user text-white"></i>
-                                    </div>
-                                    <div class="text-sm">
-                                        <div class="font-bold text-gray-800">Fatou S.</div>
-                                        <div class="text-gray-600 text-xs">⭐⭐⭐⭐⭐</div>
+                                    <!-- Hand Icon -->
+                                    <div class="absolute bottom-0 right-0 text-8xl transform translate-x-4 translate-y-4 animate-bounce" style="animation-duration: 2s;">
+                                        👋
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Info Badge -->
+                        <div class="mt-6 bg-gradient-to-r from-green-500 to-green-700 text-white p-4 rounded-xl text-center">
+                            <div class="font-bold text-lg mb-1">📱 Scannez & Vérifiez</div>
+                            <div class="text-sm text-green-100">Authentification instantanée avec votre smartphone</div>
                         </div>
                     </div>
                     
@@ -100,7 +117,8 @@
                     <div class="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4 animate-bounce" style="animation-duration: 3s;">
                         <div class="text-center">
                             <i class="fas fa-check-circle text-green-600 text-3xl mb-2"></i>
-                            <div class="font-bold text-gray-800">Vérifié</div>
+                            <div class="font-bold text-gray-800">100%</div>
+                            <div class="text-xs text-gray-600">Fiable</div>
                         </div>
                     </div>
                 </div>
@@ -108,6 +126,18 @@
         </div>
     </div>
 </section>
+
+<!-- Add animation for scanning line -->
+<style>
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
+.animate-scan {
+    animation: scan 2s ease-in-out infinite;
+}
+</style>
 
 <!-- Testimonials Section with Real People -->
 <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">

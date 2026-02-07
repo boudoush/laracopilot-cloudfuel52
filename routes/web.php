@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PaymentManagementController;
 use App\Http\Controllers\Breeder\BreederDashboardController;
 use App\Http\Controllers\Breeder\AnimalController;
 use App\Http\Controllers\Breeder\PaymentController;
+use App\Http\Controllers\Breeder\QRCodeController;
 use App\Http\Controllers\Verifier\VerifierDashboardController;
 use App\Http\Controllers\Verifier\ScanController;
 use App\Http\Controllers\ContactController;
@@ -70,6 +71,11 @@ Route::delete('/breeder/animals/{id}', [AnimalController::class, 'destroy'])->na
 Route::post('/breeder/animals/{id}/files', [AnimalController::class, 'uploadFile'])->name('breeder.animals.files.upload');
 Route::get('/breeder/animals/files/{fileId}/download', [AnimalController::class, 'downloadFile'])->name('breeder.animals.files.download');
 Route::delete('/breeder/animals/files/{fileId}', [AnimalController::class, 'deleteFile'])->name('breeder.animals.files.delete');
+
+// Breeder QR Code Generation
+Route::get('/breeder/qrcode/preview/{id}', [QRCodeController::class, 'preview'])->name('breeder.qrcode.preview');
+Route::get('/breeder/qrcode/generate/{id}', [QRCodeController::class, 'generateSingle'])->name('breeder.qrcode.generate.single');
+Route::post('/breeder/qrcode/generate-batch', [QRCodeController::class, 'generateBatch'])->name('breeder.qrcode.generate.batch');
 
 // Breeder Payments (WhatsApp Integration)
 Route::get('/breeder/payments', [PaymentController::class, 'index'])->name('breeder.payments.index');

@@ -11,18 +11,17 @@ return new class extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['individual', 'batch'])->default('individual');
-            $table->string('identification');
-            $table->string('species', 100);
-            $table->string('breed', 100);
-            $table->enum('sex', ['male', 'female']);
-            $table->integer('age');
-            $table->decimal('weight', 10, 2);
-            $table->text('health_book')->nullable();
-            $table->text('treatments')->nullable();
-            $table->text('vaccinations')->nullable();
-            $table->integer('batch_size')->nullable();
-            $table->string('qr_code', 50)->nullable()->unique();
+            $table->string('qr_code')->unique()->nullable();
+            $table->string('name')->nullable();
+            $table->string('species')->nullable();
+            $table->string('breed')->nullable();
+            $table->integer('age')->nullable();
+            $table->decimal('weight', 8, 2)->nullable();
+            $table->string('color')->nullable();
+            $table->string('gender')->nullable();
+            $table->text('health_notes')->nullable();
+            $table->string('photo_url')->nullable();
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }

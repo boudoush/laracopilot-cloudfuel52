@@ -14,6 +14,7 @@
         .gradient-green { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); }
         .gradient-brown { background: linear-gradient(135deg, #6D4C41 0%, #8D6E63 100%); }
         .gradient-orange { background: linear-gradient(135deg, #F97316 0%, #FB923C 100%); }
+        .gradient-navbar { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #388E3C 100%); }
         .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
         .fade-in { animation: fadeIn 0.6s ease-in; }
@@ -27,45 +28,46 @@
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; transform: translateY(100%); transition: transform 0.4s ease; }
         #cookie-banner.show { transform: translateY(0); }
+        .nav-link { position: relative; transition: all 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #F97316; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50 fade-in">
+    <nav class="gradient-navbar shadow-2xl sticky top-0 z-50 fade-in">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center slide-in-left">
                     <a href="/" class="flex items-center space-x-3 group">
-                        <div class="w-12 h-12 gradient-green rounded-xl flex items-center justify-center transform group-hover:scale-110 transition duration-300">
-                            <i class="fas fa-cow text-white text-2xl"></i>
-                        </div>
-                        <span class="text-2xl font-bold text-gray-800">SahelTrace</span>
+                        <img src="https://lh3.googleusercontent.com/d/1FC7HSbKK7jPDSj5huaVGqArUtxfmY5a_" alt="SahelTrace Logo" class="h-12 w-auto transform group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23ffffff%27 width=%27100%27 height=%27100%27 rx=%2710%27/%3E%3Ctext x=%2750%27 y=%2760%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27%231B5E20%27 text-anchor=%27middle%27 font-weight=%27bold%27%3EST%3C/text%3E%3C/svg%3E';">
+                        <span class="text-2xl font-bold text-white">SahelTrace</span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8 slide-in-right">
-                    <a href="/" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-home mr-2"></i>Accueil</a>
-                    <a href="{{ route('services') }}" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-concierge-bell mr-2"></i>Services</a>
-                    <a href="{{ route('about') }}" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-info-circle mr-2"></i>À Propos</a>
-                    <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-envelope mr-2"></i>Contact</a>
-                    <a href="{{ route('admin.login') }}" class="gradient-green text-white px-6 py-2.5 rounded-xl hover:opacity-90 transition font-medium transform hover:scale-105 shadow-lg">
+                    <a href="/" class="nav-link text-white hover:text-orange-300 font-medium transition"><i class="fas fa-home mr-2"></i>Accueil</a>
+                    <a href="{{ route('services') }}" class="nav-link text-white hover:text-orange-300 font-medium transition"><i class="fas fa-concierge-bell mr-2"></i>Services</a>
+                    <a href="{{ route('about') }}" class="nav-link text-white hover:text-orange-300 font-medium transition"><i class="fas fa-info-circle mr-2"></i>À Propos</a>
+                    <a href="{{ route('contact') }}" class="nav-link text-white hover:text-orange-300 font-medium transition"><i class="fas fa-envelope mr-2"></i>Contact</a>
+                    <a href="{{ route('admin.login') }}" class="gradient-orange text-white px-6 py-2.5 rounded-xl hover:opacity-90 transition font-medium transform hover:scale-105 shadow-lg">
                         <i class="fas fa-sign-in-alt mr-2"></i>Connexion
                     </a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-green-700 transition">
+                    <button id="mobile-menu-btn" class="text-white hover:text-orange-300 transition">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div id="mobile-menu" class="hidden md:hidden bg-green-800 border-t border-green-700">
             <div class="px-4 py-4 space-y-3">
-                <a href="/" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-home mr-2"></i>Accueil</a>
-                <a href="{{ route('services') }}" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-concierge-bell mr-2"></i>Services</a>
-                <a href="{{ route('about') }}" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-info-circle mr-2"></i>À Propos</a>
-                <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-envelope mr-2"></i>Contact</a>
-                <a href="{{ route('admin.login') }}" class="block gradient-green text-white px-6 py-2.5 rounded-xl text-center"><i class="fas fa-sign-in-alt mr-2"></i>Connexion</a>
+                <a href="/" class="block text-white hover:text-orange-300 font-medium py-2"><i class="fas fa-home mr-2"></i>Accueil</a>
+                <a href="{{ route('services') }}" class="block text-white hover:text-orange-300 font-medium py-2"><i class="fas fa-concierge-bell mr-2"></i>Services</a>
+                <a href="{{ route('about') }}" class="block text-white hover:text-orange-300 font-medium py-2"><i class="fas fa-info-circle mr-2"></i>À Propos</a>
+                <a href="{{ route('contact') }}" class="block text-white hover:text-orange-300 font-medium py-2"><i class="fas fa-envelope mr-2"></i>Contact</a>
+                <a href="{{ route('admin.login') }}" class="block gradient-orange text-white px-6 py-2.5 rounded-xl text-center"><i class="fas fa-sign-in-alt mr-2"></i>Connexion</a>
             </div>
         </div>
     </nav>
@@ -78,13 +80,11 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="fade-in">
                     <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 gradient-green rounded-lg flex items-center justify-center">
-                            <i class="fas fa-cow text-white"></i>
-                        </div>
+                        <img src="https://lh3.googleusercontent.com/d/1FC7HSbKK7jPDSj5huaVGqArUtxfmY5a_" alt="SahelTrace" class="h-10 w-auto" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%232E7D32%27 width=%27100%27 height=%27100%27 rx=%2710%27/%3E%3Ctext x=%2750%27 y=%2760%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 font-weight=%27bold%27%3EST%3C/text%3E%3C/svg%3E';">
                         <h3 class="text-xl font-bold">SahelTrace</h3>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Plateforme moderne de traçabilité du bétail. Garantissez l'authenticité et la qualité de votre cheptel avec nos solutions innovantes.
+                        Plateforme moderne de traçabilité du bétail. Garantissez l'authenticité et la qualité de votre cheptel.
                     </p>
                 </div>
 
