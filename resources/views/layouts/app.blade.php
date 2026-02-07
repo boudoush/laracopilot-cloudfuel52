@@ -25,7 +25,6 @@
         .pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         .rotate-slow { animation: rotate 20s linear infinite; }
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .img-fallback { background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%); display: flex; align-items: center; justify-content: center; color: #9e9e9e; }
         #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; transform: translateY(100%); transition: transform 0.4s ease; }
         #cookie-banner.show { transform: translateY(0); }
     </style>
@@ -45,6 +44,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8 slide-in-right">
                     <a href="/" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-home mr-2"></i>Accueil</a>
+                    <a href="{{ route('services') }}" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-concierge-bell mr-2"></i>Services</a>
                     <a href="{{ route('about') }}" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-info-circle mr-2"></i>À Propos</a>
                     <a href="{{ route('contact') }}" class="text-gray-700 hover:text-green-700 font-medium transition transform hover:scale-105"><i class="fas fa-envelope mr-2"></i>Contact</a>
                     <a href="{{ route('admin.login') }}" class="gradient-green text-white px-6 py-2.5 rounded-xl hover:opacity-90 transition font-medium transform hover:scale-105 shadow-lg">
@@ -62,6 +62,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-4 py-4 space-y-3">
                 <a href="/" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-home mr-2"></i>Accueil</a>
+                <a href="{{ route('services') }}" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-concierge-bell mr-2"></i>Services</a>
                 <a href="{{ route('about') }}" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-info-circle mr-2"></i>À Propos</a>
                 <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-green-700 font-medium py-2"><i class="fas fa-envelope mr-2"></i>Contact</a>
                 <a href="{{ route('admin.login') }}" class="block gradient-green text-white px-6 py-2.5 rounded-xl text-center"><i class="fas fa-sign-in-alt mr-2"></i>Connexion</a>
@@ -83,7 +84,7 @@
                         <h3 class="text-xl font-bold">SahelTrace</h3>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Plateforme moderne de traçabilité du bétail au Sahel. Garantissez l'authenticité et la qualité de votre cheptel avec nos solutions innovantes.
+                        Plateforme moderne de traçabilité du bétail. Garantissez l'authenticité et la qualité de votre cheptel avec nos solutions innovantes.
                     </p>
                 </div>
 
@@ -91,6 +92,7 @@
                     <h4 class="font-bold text-lg mb-4"><i class="fas fa-link mr-2 text-orange-500"></i>Liens Rapides</h4>
                     <ul class="space-y-2">
                         <li><a href="/" class="text-gray-400 hover:text-orange-500 transition transform hover:translate-x-1 inline-block"><i class="fas fa-chevron-right mr-2 text-xs"></i>Accueil</a></li>
+                        <li><a href="{{ route('services') }}" class="text-gray-400 hover:text-orange-500 transition transform hover:translate-x-1 inline-block"><i class="fas fa-chevron-right mr-2 text-xs"></i>Services</a></li>
                         <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-orange-500 transition transform hover:translate-x-1 inline-block"><i class="fas fa-chevron-right mr-2 text-xs"></i>À Propos</a></li>
                         <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-orange-500 transition transform hover:translate-x-1 inline-block"><i class="fas fa-chevron-right mr-2 text-xs"></i>Contact</a></li>
                         <li><a href="{{ route('admin.login') }}" class="text-gray-400 hover:text-orange-500 transition transform hover:translate-x-1 inline-block"><i class="fas fa-chevron-right mr-2 text-xs"></i>Espace Client</a></li>
@@ -186,22 +188,6 @@
         function closeCookieBanner() {
             document.getElementById('cookie-banner').classList.remove('show');
         }
-
-        // Image fallback handler
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.className = 'img-fallback ' + this.className;
-                    fallback.style.width = this.width ? this.width + 'px' : '100%';
-                    fallback.style.height = this.height ? this.height + 'px' : '300px';
-                    fallback.innerHTML = '<i class="fas fa-image text-4xl"></i>';
-                    this.parentNode.insertBefore(fallback, this);
-                });
-            });
-        });
     </script>
 </body>
 </html>

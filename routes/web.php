@@ -17,6 +17,7 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () { return view('welcome'); });
 
 // Static Pages
+Route::get('/services', function () { return view('services'); })->name('services');
 Route::get('/about', function () { return view('about'); })->name('about');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
@@ -30,7 +31,7 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 // Admin Authentication
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login']);
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 // Admin Dashboard
