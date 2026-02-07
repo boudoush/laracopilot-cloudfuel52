@@ -18,7 +18,7 @@
         <!-- Logo -->
         <div class="text-center mb-8">
             <div class="flex justify-center mb-4">
-                <img src="https://lh3.googleusercontent.com/d/1FC7HSbKK7jPDSj5huaVGqArUtxfmY5a_" alt="SahelTrace Logo" class="h-24 w-auto" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 200%27%3E%3Crect fill=%27%231B5E20%27 width=%27200%27 height=%27200%27 rx=%2720%27/%3E%3Ctext x=%27100%27 y=%27120%27 font-family=%27Arial%27 font-size=%2780%27 fill=%27white%27 text-anchor=%27middle%27%3EST%3C/text%3E%3C/svg%3E';">
+                <img src="/logo.svg" alt="SahelTrace Logo" class="h-24 w-24">
             </div>
             <h1 class="text-4xl font-bold text-gray-800 mb-2">Bienvenue sur SahelTrace</h1>
             <p class="text-gray-600">Connectez-vous à votre compte</p>

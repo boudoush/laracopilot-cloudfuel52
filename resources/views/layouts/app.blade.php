@@ -40,7 +40,7 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center slide-in-left">
                     <a href="/" class="flex items-center space-x-3 group">
-                        <img src="https://lh3.googleusercontent.com/d/1FC7HSbKK7jPDSj5huaVGqArUtxfmY5a_" alt="SahelTrace Logo" class="h-12 w-auto transform group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23ffffff%27 width=%27100%27 height=%27100%27 rx=%2710%27/%3E%3Ctext x=%2750%27 y=%2760%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27%231B5E20%27 text-anchor=%27middle%27 font-weight=%27bold%27%3EST%3C/text%3E%3C/svg%3E';">
+                        <img src="/logo.svg" alt="SahelTrace Logo" class="h-14 w-14 transform group-hover:scale-110 group-hover:rotate-12 transition duration-300">
                         <span class="text-2xl font-bold text-white">SahelTrace</span>
                     </a>
                 </div>
@@ -80,7 +80,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="fade-in">
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="https://lh3.googleusercontent.com/d/1FC7HSbKK7jPDSj5huaVGqArUtxfmY5a_" alt="SahelTrace" class="h-10 w-auto" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%232E7D32%27 width=%27100%27 height=%27100%27 rx=%2710%27/%3E%3Ctext x=%2750%27 y=%2760%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 font-weight=%27bold%27%3EST%3C/text%3E%3C/svg%3E';">
+                        <img src="/logo.svg" alt="SahelTrace" class="h-12 w-12">
                         <h3 class="text-xl font-bold">SahelTrace</h3>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">

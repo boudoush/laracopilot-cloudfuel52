@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B5E20;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#logoGradient)"/>
+  <!-- Cow Icon -->
+  <path d="M60 80 Q50 70 45 80 L40 90 Q38 95 42 98 L50 95 L55 105 L60 110 L70 115 L80 115 L85 110 L90 105 L95 100 L100 95 L105 100 L110 105 L115 110 L120 115 L130 115 L140 110 L145 105 L150 95 L158 98 Q162 95 160 90 L155 80 Q150 70 140 80 L135 85 L120 80 L100 75 L80 80 L65 85 Z" fill="white" opacity="0.9"/>
+  <!-- Eye 1 -->
+  <circle cx="80" cy="95" r="4" fill="#1B5E20"/>
+  <!-- Eye 2 -->
+  <circle cx="120" cy="95" r="4" fill="#1B5E20"/>
+  <!-- Nose -->
+  <ellipse cx="100" cy="110" rx="12" ry="8" fill="#F97316" opacity="0.8"/>
+  <!-- Nostrils -->
+  <circle cx="95" cy="110" r="2" fill="#1B5E20"/>
+  <circle cx="105" cy="110" r="2" fill="#1B5E20"/>
+  <!-- Text ST -->
+  <text x="100" y="155" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">ST</text>
+</svg>
